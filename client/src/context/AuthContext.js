@@ -1,0 +1,36 @@
+// client/src/context/AuthContext.js (Create this file)
+import React, { createContext, useState, useEffect, useContext } from 'react';
+
+const AuthContext = createContext();
+
+export const AuthProvider = ({ children }) => {
+    const [user, setUser] = useState(null); // Stores user info if logged in
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        // Check local storage for user info on app load
+        const userInfo = localStorage.getItem('userInfo');
+        if (userInfo) {
+            setUser(JSON.parse(userInfo));
+        }
+        setLoading(false);
+    }, []);
+
+    const login = (userData) => {
+        setUser(userData);
+        localStorage.setItem('userInfo', JSON.stringify(userData));
+    };
+
+    const logout = () => {
+        setUser(null);
+        localStorage.removeItem('userInfo');
+    };
+
+    return (
+        <AuthContext.Provider value={{ user, loading, login, logout }}>
+            {!loading && children} 
+        </AuthContext.Provider>
+    );
+};
+
+export const useAuth = () => useContext(AuthContext);

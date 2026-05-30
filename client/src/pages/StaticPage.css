@@ -1,0 +1,71 @@
+/* client/src/pages/StaticPage.css */
+.static-page {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.static-page h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-size: 2.8rem;
+}
+
+.static-content {
+    padding: 30px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.static-content h2 {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.static-content ul {
+    list-style: disc inside;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.static-content li {
+    margin-bottom: 8px;
+}
+
+.static-content a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.contact-form {
+    margin-top: 30px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form .btn {
+    width: auto;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .static-page h1 {
+        font-size: 2.2rem;
+    }
+
+    .static-content {
+        padding: 20px;
+        font-size: 1rem;
+    }
+
+    .static-content h2 {
+        font-size: 1.5rem;
+    }
+}

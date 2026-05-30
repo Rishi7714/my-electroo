@@ -1,0 +1,140 @@
+/* client/src/components/Header.css */
+.header {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px var(--shadow-light);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+    /* Changed from flex to grid for better control of three distinct areas */
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* logo-section | header-search | nav-links */
+    gap: 20px; /* Space between grid items */
+    align-items: center; /* Vertically align items in the middle */
+}
+
+/* Styles for the new logo and tagline grouping */
+.logo-section {
+    grid-column: 1; /* Place in the first column of the grid */
+    display: flex;
+    flex-direction: column; /* Stack logo and tagline vertically */
+    align-items: flex-start; /* Align them to the left within their column */
+}
+
+.logo-section .logo {
+    font-family: 'Times New Roman', serif;
+    font-size: 50px; 
+    font-weight: bold;
+    color: navy;
+    text-decoration: none; /* Ensure no underline from parent 'a' styles */
+}
+
+.logo-section .into {
+    font-family: 'Times New Roman', serif;
+    font-size: 20px; 
+    color:blue;
+    margin-top: 0.1px; 
+}
+
+/* Styles for the search bar container */
+.header-search {
+    grid-column: 2; /* Place in the second column of the grid */
+    justify-self: center; /* Center the search bar horizontally within its grid column */
+    width: 100%; /* Allow search bar to take full width of its column */
+    max-width: 500px; /* Limit search bar width for aesthetics */
+}
+
+/* Styles for the navigation links */
+.nav-links {
+    grid-column: 3; /* Place in the third column of the grid */
+    justify-self: end; /* Align nav links to the end of their column */
+}
+
+.nav-links a,
+.nav-links .nav-btn {
+    margin-left: 25px;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.nav-links a:hover,
+.nav-links .nav-btn:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-btn {
+    color: var(--secondary-color);
+}
+
+.nav-btn:hover {
+    color: #dc3545; /* Red for logout */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .header-container {
+        grid-template-columns: 1fr; /* On small screens, stack items in a single column */
+        gap: 15px; /* Adjust gap for stacked items */
+        padding: 10px 20px; /* Add some padding around the stacked items */
+    }
+
+    .logo-section,
+    .header-search,
+    .nav-links {
+        grid-column: 1; /* All items occupy the single column */
+        width: 100%; /* Make them take full width */
+        margin: 0 auto; /* Center them if they have a max-width */
+        text-align: center; /* Center text within these sections */
+    }
+
+    .logo-section {
+        align-items: center; /* Center logo and tagline when stacked */
+        margin-bottom: 5px; /* Space below the logo section */
+    }
+
+    .logo-section .logo {
+        font-size: 38px; /* Adjust font size for mobile */
+    }
+
+    .logo-section .into {
+        font-size: 16px; /* Adjust font size for mobile */
+    }
+
+    .header-search {
+        max-width: 100%; /* Remove max-width constraint */
+        padding: 0; /* Remove internal padding if not needed */
+    }
+
+    /* Adjustments for search bar input and button within header-search */
+    .header-search .search-bar {
+        flex-direction: column; /* Stack input and button */
+        gap: 10px; /* Space between stacked search elements */
+    }
+
+    .nav-links {
+        margin-top: 5px; /* Space above nav links */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center nav links */
+    }
+
+    .nav-links a,
+    .nav-links .nav-btn {
+        margin: 5px 10px; /* Adjust margin for wrapped links */
+    }
+}

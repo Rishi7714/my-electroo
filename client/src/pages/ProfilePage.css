@@ -1,0 +1,147 @@
+/* client/src/pages/ProfilePage.css */
+.profile-page {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.profile-page h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-size: 2.8rem;
+}
+
+.profile-details {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    padding: 30px;
+    text-align: center;
+}
+
+.profile-details h2 {
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+}
+
+.profile-details p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.profile-details strong {
+    color: var(--primary-color);
+}
+
+.profile-details .logout-btn {
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 1rem;
+}
+
+.order-history {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    padding: 30px;
+}
+
+.order-history h2 {
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.order-history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.order-history-table th,
+.order-history-table td {
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    text-align: left;
+    vertical-align: top; /* Align content to the top */
+}
+
+.order-history-table th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.order-history-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.order-history-table tr:hover {
+    background-color: #e9ecef;
+}
+
+.view-details-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .profile-details, .order-history {
+        padding: 20px;
+    }
+
+    .profile-details h2, .order-history h2 {
+        font-size: 1.8rem;
+    }
+
+    .order-history-table {
+        font-size: 0.9rem;
+        display: block; /* Make table scrollable */
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .order-history-table thead, .order-history-table tbody, .order-history-table th, .order-history-table td, .order-history-table tr {
+        display: block; /* For better mobile presentation if not scrolling */
+    }
+
+    .order-history-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .order-history-table tr {
+        border: 1px solid var(--border-color);
+        margin-bottom: 15px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .order-history-table td {
+        border: none;
+        border-bottom: 1px solid var(--border-color);
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+
+    .order-history-table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+    .order-history-table td:nth-of-type(1):before { content: "Order ID"; }
+    .order-history-table td:nth-of-type(2):before { content: "Date"; }
+    .order-history-table td:nth-of-type(3):before { content: "Total"; }
+    .order-history-table td:nth-of-type(4):before { content: "Status"; }
+    .order-history-table td:nth-of-type(5):before { content: "Items"; }
+    .order-history-table td:nth-of-type(6):before { content: "Details"; }
+}

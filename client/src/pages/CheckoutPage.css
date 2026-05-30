@@ -1,0 +1,118 @@
+/* client/src/pages/CheckoutPage.css */
+.checkout-page {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.checkout-page h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-size: 2.8rem;
+}
+
+.checkout-content {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    align-items: flex-start;
+}
+
+.shipping-payment-section {
+    flex: 2; /* Takes more space */
+    min-width: 350px;
+    padding: 30px;
+}
+
+.shipping-payment-section h2 {
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.payment-method-options label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.payment-method-options input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Make radio buttons slightly larger */
+}
+
+.place-order-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    margin-top: 30px;
+}
+
+.order-summary-checkout {
+    flex: 1; /* Takes remaining space */
+    min-width: 300px;
+    padding: 30px;
+    position: sticky;
+    top: 100px; /* Adjust based on header height */
+    max-height: fit-content; /* Helps with sticky behavior */
+}
+
+.order-summary-checkout h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.summary-items {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.summary-details p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.summary-details p span {
+    font-weight: 500;
+}
+
+.summary-total {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .checkout-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .shipping-payment-section,
+    .order-summary-checkout {
+        min-width: unset;
+        width: 100%;
+        position: static; /* Remove sticky on mobile */
+        top: auto;
+    }
+}

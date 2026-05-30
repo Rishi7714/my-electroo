@@ -1,0 +1,73 @@
+/* client/src/components/ProductCard.css */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px; /* Reverted padding to 15px */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensure cards in a grid have consistent height */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1; /* Allow link content to grow */
+}
+
+.product-image {
+    max-width: 100%;
+    height: 180px; /* Reverted height to 180px */
+    object-fit: contain; /* Ensure image fits without cropping */
+    border-radius: 8px;
+    margin-bottom: 15px; /* Reverted margin-bottom to 15px */
+}
+
+.product-info {
+    flex-grow: 1; /* Allow info section to take available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.product-name {
+    font-size: 1.2rem; /* Reverted font size to 1.2rem */
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowed text */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+    padding: 0 5px; /* Small padding to prevent text touching edges */
+}
+
+.product-category {
+    font-size: 0.9rem; /* Reverted font size to 0.9rem */
+    color: var(--secondary-color);
+    margin-bottom: 10px; /* Reverted margin-bottom to 10px */
+}
+
+.product-price {
+    font-size: 1.3rem; /* Reverted font size to 1.3rem */
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 15px; /* Reverted margin-bottom to 15px */
+}
+
+.add-to-cart-btn {
+    width: 90%; /* Button takes most of the card width */
+    padding: 10px 15px; /* Reverted padding to 10px 15px */
+    font-size: 0.95rem; /* Reverted font size to 0.95rem */
+    margin-top: auto; /* Push button to the bottom */
+}

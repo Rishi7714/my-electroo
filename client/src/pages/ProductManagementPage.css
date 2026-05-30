@@ -1,0 +1,83 @@
+/* client/src/pages/ProductManagementPage.css */
+
+/* Reusing .admin-page and .card styles from AdminPage.css */
+
+.add-new-product-btn {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 30px auto;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+}
+
+.product-management-list {
+    padding: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling for small screens */
+    margin-bottom: 40px;
+}
+
+.product-management-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.product-management-table th,
+.product-management-table td {
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.product-management-table th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 600;
+    white-space: nowrap; /* Prevent headers from wrapping */
+}
+
+.product-management-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.product-management-table tr:hover {
+    background-color: #e9ecef;
+}
+
+.product-management-table .edit-btn,
+.product-management-table .delete-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    margin-right: 8px; /* Space between buttons */
+}
+
+.product-management-table .delete-btn {
+    background-color: #dc3545;
+}
+
+.product-management-table .delete-btn:hover {
+    background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+    .add-new-product-btn {
+        width: 90%;
+    }
+
+    .product-management-table {
+        font-size: 0.9rem;
+    }
+
+    .product-management-table th, .product-management-table td {
+        padding: 8px;
+    }
+
+    .product-management-table .edit-btn,
+    .product-management-table .delete-btn {
+        display: block; /* Stack buttons on small screens */
+        width: 100%;
+        margin-bottom: 5px;
+        margin-right: 0;
+    }
+}

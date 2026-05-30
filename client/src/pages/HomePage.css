@@ -1,0 +1,174 @@
+/* client/src/pages/HomePage.css */
+
+/* --- Hero Section Styles --- */
+.hero-section {
+    /* Combined and updated background and height */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/HomePageImage.png') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 100px 20px;
+    height: 60vh; /* Adjust as needed, previously 40px margin-bottom */
+    display: flex; /* Added flex for centering content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    border-radius: 12px; /* Kept border-radius */
+    margin-bottom: 40px; /* Re-added margin-bottom for spacing */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px; /* Adjusted margin */
+    font-weight: 700; /* Added font-weight */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Kept text-shadow */
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Kept text-shadow */
+}
+
+.hero-content .btn {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+}
+
+/* --- Featured Products Section Styles --- */
+.featured-products {
+    padding: 60px 20px; /* Adjusted padding */
+    text-align: center;
+    margin-bottom: 40px; /* Kept margin-bottom */
+}
+
+.featured-products h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px; /* Adjusted margin-bottom */
+    color: var(--primary-color);
+}
+
+/* --- Product Grid Styles (IMPORTANT: Changed back to Grid for 3-3 layout) --- */
+.product-grid {
+    display: grid;        /* Changed from flex back to grid */
+    /* Updated grid columns for a 3-column layout that wraps */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px;            /* Combined row and column gap */
+    justify-content: center; /* Center the grid items if they don't fill the row */
+
+    /* Removed previous flex and scrollbar related styles */
+    /* flex-wrap: nowrap; */
+    /* overflow-x: auto; */
+    /* padding-bottom: 20px; */
+    /* justify-content: flex-start; */
+    /* scrollbar-width: thin; */
+    /* scrollbar-color: var(--primary-color) var(--light-gray); */
+}
+
+/* Removed Webkit scrollbar styles as they are no longer needed for horizontal scrolling */
+/*
+.product-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.product-grid::-webkit-scrollbar-track {
+    background: var(--light-gray);
+    border-radius: 10px;
+}
+
+.product-grid::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    border: 2px solid var(--light-gray);
+}
+*/
+
+/* Ensure individual product cards responsive behavior in grid */
+.product-grid .product-card {
+    /* Removed flex-shrink: 0 and fixed width as grid handles sizing */
+    /* flex-shrink: 0; */
+    /* width: 280px; */
+    max-width: 100%; /* Ensure they don't overflow on very small screens */
+    padding: 15px; /* Assuming ProductCard itself handles its own padding */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Remove .featured-item specific styles, as ProductCard has its own */
+/*
+.featured-item {
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.featured-item img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.featured-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.featured-item p {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+*/
+
+/* --- About Us Section Styles --- */
+.about-us-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--white); /* Re-added background-color */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px var(--shadow-light); /* Re-added box-shadow */
+}
+
+.about-us-section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.about-us-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 15px auto;
+    color: var(--text-dark); /* Ensure text color is defined */
+}
+
+/* --- Responsive adjustments --- */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .featured-products h2,
+    .about-us-section h2 {
+        font-size: 2rem;
+    }
+
+    /* Product grid on smaller screens will now stack */
+    .product-grid {
+        grid-template-columns: 500fr; /* Stack on small screens, back to original grid media query behavior */
+    }
+    .product-grid .product-card {
+        width: 100%; /* Adjust width for stacked cards on mobile */
+    }
+}

@@ -1,0 +1,50 @@
+/* client/src/components/FilterBox.css */
+.filter-box {
+    padding: 20px;
+    width: 100%;
+    max-width: 300px; /* Limit width */
+    margin-left: auto; /* Push to the right in flex container */
+}
+
+.filter-box h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.filter-box .form-group {
+    margin-bottom: 15px;
+}
+
+.filter-box .form-group label {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.filter-box .form-group input,
+.filter-box .form-group select {
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+}
+
+.filter-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.filter-actions .btn {
+    width: 100%;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .filter-box {
+        max-width: 100%; /* Take full width on small screens */
+        margin-left: 0;
+    }
+}
